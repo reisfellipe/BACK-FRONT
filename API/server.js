@@ -12,9 +12,14 @@ const app = express();
 
 const users = [];
 
-app.post('/users')
+app.post('/users', (req,res)=>{
 
-app.get('/users', (requisition, response) => {
+    console.log(req)
+    res.send('Ok POST')
+
+})
+
+app.get('/users', (req, res) => {
     app.send('método GET está respondendo')
 })
 
