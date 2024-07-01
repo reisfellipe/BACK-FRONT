@@ -17,14 +17,12 @@ app.post('/users', (req,res)=>{
 
     users.push(req.body)
 
-    res.send('Ok deu certo')
+    res.status(201).json(req.body)
 
 })
 
 app.get('/users', (req, res) => {
-    app.send('método GET está respondendo')
-
-    res.json(users)
+    res.status(200).json(users)
 })
 
 app.listen(3000)
