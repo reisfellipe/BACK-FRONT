@@ -27,6 +27,7 @@ app.post('/users', async (req,res)=>{
     })
 
     res.status(201).json(req.body)
+    send("deu certo")
 
 })
 
