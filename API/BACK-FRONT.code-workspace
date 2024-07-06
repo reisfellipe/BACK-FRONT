@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "BACK-FRONT",
+			"path": ".."
+		},
+		{
+			"name": "onlyDevs-cadastro-usuarios",
+			"path": "../../../Projeto-Registro-React.JSX/onlyDevs-cadastro-usuarios"
+		}
+	],
+	"settings": {}
+}
