@@ -93,6 +93,7 @@ header {
 
         & p span {
             color: aqua;
+            font-weight: 600;
             
         }
     }
@@ -216,6 +217,7 @@ header {
             color: aqua;
             outline: none;
             margin: 0;
+            font-size: 17px;
         }
     }
 

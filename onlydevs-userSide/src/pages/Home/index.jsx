@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './style.css'
 import Trash from '../../assets/trash.png'
 import Brand from '../../assets/onlyDevs.png'
 import Flash from '../../assets/flash.png'
 import Star from '../../assets/star.png'
 import api from '../../services/api'
+
+
 
 function Home() {
 
@@ -24,16 +26,27 @@ function Home() {
   ]
 */
   
-  let users = []
+  const [users, setUsers] = useState([])
+
+  const inputName = useRef()
+  const inputAge = useRef()
+  const inputEmail = useRef()
 
   async function getUsers(){
-    users = await api.get('/usuarios')
-    console.log(users)
+    const usersFromApi = await api.get('/usuarios')
+    
+    setUsers(usersFromApi.data)
   }
 
-  useEffect(()=>{
-    getUsers()
-  }, [])
+  async function createUsers(){
+    // const usersFromApi = await api.get('/usuarios')
+
+    console.log(inputName)
+  }
+
+  // useEffect(()=>{
+  //   getUsers()
+  // }, [])
 
   return (
     <>
@@ -87,10 +100,10 @@ function Home() {
         <div className="container">
           <form>
             <h1><span>OnlyDevs+ | </span>Create your account</h1>
-            <input type="text" name="nome" placeholder='Your name'/>
-            <input type="number" name='idade' placeholder='Your age' aria-valuemin={18} />
-            <input type="email" name='email' placeholder='Your best e-mail' />
-            <button>Register</button>
+            <input type="text" name="nome" placeholder='Your name' ref={inputName}/>
+            <input type="number" name='idade' placeholder='Your age' ref={inputAge} />
+            <input type="email" name='email' placeholder='Your best e-mail' ref={inputEmail} />
+            <button type='button' onClick={createUsers}>Register</button>
           </form>
 
           {/* onde irá ficar código javascript */}
