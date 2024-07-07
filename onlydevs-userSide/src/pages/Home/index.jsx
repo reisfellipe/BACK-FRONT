@@ -1,12 +1,14 @@
+import { useEffect } from 'react'
 import './style.css'
 import Trash from '../../assets/trash.png'
 import Brand from '../../assets/onlyDevs.png'
 import Flash from '../../assets/flash.png'
 import Star from '../../assets/star.png'
+import api from '../../services/api'
 
 function Home() {
 
-  const users = [
+  /*const users = [
     {
       id: '32dsd35454d',
       name:'Fellipe',
@@ -20,6 +22,18 @@ function Home() {
       email:"dylanschwartz@uol.com"
     }
   ]
+*/
+  
+  let users = []
+
+  async function getUsers(){
+    users = await api.get('/usuarios')
+    console.log(users)
+  }
+
+  useEffect(()=>{
+    getUsers()
+  }, [])
 
   return (
     <>

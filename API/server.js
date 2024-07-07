@@ -8,11 +8,13 @@ OBJETIVO DESSE BACK-END: Criar nossa API de usuários
 
 import express from 'express'
 import { PrismaClient } from '@prisma/client'
+import cors from 'cors'
 
 const prisma = new PrismaClient()
 const app = express();
 
 app.use(express.json());//avisando pro express que usaremos arquivo .JSON
+app.use(cors())
 
 const users = [];
 
