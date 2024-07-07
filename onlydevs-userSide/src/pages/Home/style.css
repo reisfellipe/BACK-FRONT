@@ -183,6 +183,7 @@ header {
         border-radius: 30px;
         background-color: #180f85a3;
         width: 600px;
+        height: 500px;
         margin-bottom: 30px;
         
         & h1{
@@ -194,9 +195,9 @@ header {
         }
 
         & button {
-            border-radius: 30px;
+            border-radius: 40px;
             background-color: royalblue;
-            height: 50px;
+            height: 70px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;

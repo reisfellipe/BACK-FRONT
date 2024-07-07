@@ -38,15 +38,25 @@ function Home() {
     setUsers(usersFromApi.data)
   }
 
-  async function createUsers(){
-    // const usersFromApi = await api.get('/usuarios')
-
-    console.log(inputName)
-  }
-
   // useEffect(()=>{
   //   getUsers()
   // }, [])
+  
+  async function deleteUsers(id){
+    await api.delete(`/usuarios/${id}`)
+    getUsers()
+  }
+
+  async function createUsers(){
+    
+    await api.post('/usuarios',  {
+      name: inputName.current.value,
+      age: inputAge.current.value,
+      email: inputEmail.current.value
+    })
+
+  }
+  
 
   return (
     <>
@@ -103,7 +113,7 @@ function Home() {
             <input type="text" name="nome" placeholder='Your name' ref={inputName}/>
             <input type="number" name='idade' placeholder='Your age' ref={inputAge} />
             <input type="email" name='email' placeholder='Your best e-mail' ref={inputEmail} />
-            <button type='button' onClick={createUsers}>Register</button>
+            <button type='button' onClick={createUsers}>Sign up</button>
           </form>
 
           {/* onde irá ficar código javascript */}
@@ -115,7 +125,7 @@ function Home() {
                   <p><span>Age</span>: {user.age}</p>
                   <p><span>Email</span>: {user.email}</p>
                 </div>
-                <button>
+                <button type='button' onClick={() => deleteUsers(user.id)}>
                   <img src={Trash} />
                 </button>
               </div>
