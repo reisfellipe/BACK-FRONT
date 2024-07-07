@@ -82,6 +82,7 @@ header {
         & h2 {
             font-size: 2.4rem;
             letter-spacing: 1.3px;
+            margin-bottom: 30px;
         }
 
         & p {
@@ -183,7 +184,7 @@ header {
         border-radius: 30px;
         background-color: #180f85a3;
         width: 600px;
-        height: 500px;
+        height: 530px;
         margin-bottom: 30px;
         
         & h1{
