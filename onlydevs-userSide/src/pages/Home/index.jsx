@@ -6,6 +6,21 @@ import Star from '../../assets/star.png'
 
 function Home() {
 
+  const users = [
+    {
+      id: '32dsd35454d',
+      name:'Fellipe',
+      age:19,
+      email:'reisfellipedeveloper@gmail.com'
+    },
+    {
+      id:'35d6efd6ea5f',
+      name:'Dylan',
+      age:21,
+      email:"dylanschwartz@uol.com"
+    }
+  ]
+
   return (
     <>
       <header>
@@ -45,8 +60,10 @@ function Home() {
             </div>
 
             <div className="link-nd">
-              <h3>Get Templates PRO</h3>
-              <p>Done for own influencers of pair programming published on Figma exclusive</p>
+              <div className="description">
+                <h3>Get Templates PRO</h3>
+                <p>Done for own influencers of pair programming published on Figma exclusive</p>
+              </div>
               <img src={Star} />
             </div>
           </div>
@@ -55,23 +72,30 @@ function Home() {
         
         <div className="container">
           <form>
-            <h1>Create your login</h1>
+            <h1><span>OnlyDevs+ | </span>Create your account</h1>
             <input type="text" name="nome" placeholder='Your name'/>
             <input type="number" name='idade' placeholder='Your age' aria-valuemin={18} />
             <input type="email" name='email' placeholder='Your best e-mail' />
-            <button>Register me</button>
+            <button>Register</button>
           </form>
 
-          <div>
-            <div>
-              <p>Name:</p>
-              <p>Age:</p>
-              <p>Email:</p>
-            </div>
-            <button>
-              <img src={Trash} />
-            </button>
-          </div>
+          {/* onde irá ficar código javascript */}
+          { users.map( user => (
+            <>
+              <div key={user.id} className='card'>
+                <div>
+                  <p><span>Name</span>: {user.name}</p>
+                  <p><span>Age</span>: {user.age}</p>
+                  <p><span>Email</span>: {user.email}</p>
+                </div>
+                <button>
+                  <img src={Trash} />
+                </button>
+              </div>
+            </>
+
+          ))}
+
 
         </div>
       </section>

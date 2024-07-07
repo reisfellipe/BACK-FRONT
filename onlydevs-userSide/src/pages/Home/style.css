@@ -1,6 +1,6 @@
 header {
     width: 100vw;
-    padding: 20px;
+    padding: 30px;
 
     & nav{
         display: flex;
@@ -64,11 +64,12 @@ header {
 .copy {
     display: flex;
     width: 100%;
-    padding: 30px;
+    padding: 0 100px;
+    margin: auto;
 
     & .text {
         max-width: 700px;
-        margin: 50px;
+        padding-top: 50px;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -84,9 +85,9 @@ header {
         }
 
         & p {
-            font-size: 20px;
-            margin-top: 30px;
-            width: 100%;
+            font-size: 18px;
+            margin: 10px 0;
+            width: 89%;
             line-height: 1.5;
         }
 
@@ -97,33 +98,145 @@ header {
     }
 
     & .text-links{
-        border: solid 1px aqua;
-        max-width: 700px;
+        margin-top: 3rem;
+        max-width: 800px;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
 
         & img{
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
         }
 
         & .link-st {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
+            background-color: black;
+            border-radius: 35px;
+            padding: 25px;
+            margin-right: 20px;
+            width: 440px;
+            height: 160px;
             
+            & h3 {
+                font-size: 1.4rem;
+                color: rgb(19, 145, 213);
+            }
+
+            & p{
+                font-size: 16px;
+                width: 100%;
+            }
+        }
+
+        & .link-nd{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: rgb(33, 34, 34);
+            border-radius: 35px;
+            padding: 25px;
+            margin-right: 20px;
+            width: 440px;
+            height: 160px;
+
+            & .description {
+                display: flex;
+                flex-direction: column;
+            }
+
+            & h3 {
+                font-size: 1.4rem;
+                color: rgb(150, 92, 237);
+            }
+
+            & p{
+                font-size: 16px;
+                width: 100%;
+            }
         }
     }
 
 }
 
 .container {
-    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
     min-width: 400px;
-    width: 500px;
+    width: 600px;
     margin: auto;
     padding: 30px;
     border-radius: 25px;
     text-align: center;
-    background-color: rgba(65, 105, 225, 0.201);
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 50px;
+        gap: 20px;
+        border-radius: 30px;
+        background-color: #180f85a3;
+        width: 600px;
+        margin-bottom: 30px;
+        
+        & h1{
+            margin-bottom: 15px;
+        }
+
+        & h1 span {
+            color: aqua;
+        }
+
+        & button {
+            border-radius: 30px;
+            background-color: royalblue;
+            height: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: all .3s;
+        }
+
+        & button:hover {
+            opacity: 0.7;
+        }
+
+        & input {
+            height: 50px;
+            border-radius: 25px;
+            border: solid 1px aqua;
+            padding: 0px 20px;
+            background-color: #222;
+            color: aqua;
+            outline: none;
+            margin: 0;
+        }
+    }
+
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #180f85a3;
+    margin: 10px;
+    padding: 25px;
+    width: 400px;
+    border-radius: 15px;
+    text-align: left;
+
+    & button img {
+        height: 20px;
+    }
+
+    & p span {
+        font-weight: bold;
+        color: aqua;
+    }
 }
