@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import './style.css'
 import Trash from '../../assets/trash.png'
 import Brand from '../../assets/onlyDevs.png'
